@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find 2dof_robot_arm_assembly_description)/urdf/2dof_robot_arm_assembly.xacro'"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false"
+output="screen" args="-param robot_description -urdf -model 2dof_robot_arm_assembly"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <rosparam file="$(find 2dof_robot_arm_assembly_description)/launch/controller2.yaml" command="load" ns="2dof_robot_arm_assembly" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="2dof_robot_arm_assembly"  args="Rev1_position_controller Rev2_position_controller Rev3_position_controller joint_state_controller"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+   <remap from="/joint_states" to="/2dof_robot_arm_assembly/joint_states"/>
+  </node>
+  <node name="arm_control" pkg="2dof_robot_arm_assembly_description" type="arm_control"/>
+</launch>

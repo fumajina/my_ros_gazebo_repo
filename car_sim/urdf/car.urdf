@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<robot name="car">
+ <link name="world"/>
+
+ <link name="base_link">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_body.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 1.57"/>
+   <material name="red">
+    <color rgba="1 0 0 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="base_link_joint" type="fixed">
+  <origin xyz="0 0 1" rpy="0 0 0"/>
+  <parent link="world"/>
+  <child link="base_link"/>
+ </joint>
+
+ <link name="shaft_1">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_shaft_2.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <material name="blue">
+    <color rgba="0 0 1 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="shaft_joint_1" type="continuous">
+  <origin xyz="-0.08 -0.02 0.01" rpy="0 1.57 0"/>
+  <parent link="base_link"/>
+  <child link="shaft_1"/>
+ </joint>
+
+<link name="shaft_2">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_shaft_2.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <material name="blue">
+    <color rgba="0 0 1 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="shaft_joint_2" type="continuous">
+  <origin xyz="-0.08 0.02 0.01" rpy="0 1.57 0"/>
+  <parent link="base_link"/>
+  <child link="shaft_2"/>
+ </joint>
+
+<link name="wheel_1">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_wheel.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <material name="green">
+    <color rgba="0 1 0 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="wheel_joint_1" type="fixed">
+  <origin xyz="0 0 0.15" rpy="1.57 0 0"/>
+  <parent link="shaft_1"/>
+  <child link="wheel_1"/>
+ </joint>
+
+<link name="wheel_2">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_wheel.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <material name="green">
+    <color rgba="0 1 0 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="wheel_joint_2" type="fixed">
+  <origin xyz="0 0 0.01" rpy="1.57 0 0"/>
+  <parent link="shaft_1"/>
+  <child link="wheel_2"/>
+ </joint>
+
+<link name="wheel_3">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_wheel.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <material name="green">
+    <color rgba="0 1 0 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="wheel_joint_3" type="fixed">
+  <origin xyz="0 0 0.15" rpy="1.57 0 0"/>
+  <parent link="shaft_2"/>
+  <child link="wheel_3"/>
+ </joint>
+
+<link name="wheel_4">
+  <visual>
+   <geometry>
+    <mesh filename="package://car_sim/stl/test_robot_wheel.stl"/>
+   </geometry>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <material name="green">
+    <color rgba="0 1 0 2"/>
+   </material>
+  </visual>
+ </link>
+ <joint name="wheel_joint_4" type="fixed">
+  <origin xyz="0 0 0.01" rpy="1.57 0 0"/>
+  <parent link="shaft_2"/>
+  <child link="wheel_4"/>
+ </joint>
+               
+</robot>

@@ -1,0 +1,273 @@
+<?xml version="1.0" ?>
+<robot name="test_robot2_assem" xmlns:xacro="http://www.ros.org/wiki/xacro">
+ <material name="silver">
+  <color rgba="1 1 1 2"/>
+ </material>
+<!--<xacro:include filename="$(find test_robot2_assem_description)/urdf/test_robot2_assem.trans" />
+<xacro:include filename="$(find test_robot2_assem_description)/urdf/test_robot2_assem.gazebo" />-->
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.0007008474989684e-16 0.0024718672211768854 0.04992269434636615"/>
+    <mass value="0.1979037709481497"/>
+    <inertia ixx="0.00048" ixy="0.0" ixz="-0.0" iyy="0.00064" iyz="-0.0" izz="0.000501"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="world"/>
+<joint name="joint_base" type="floating">
+ <parent link="world"/>
+ <child link="base_link"/>
+ <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+</joint>
+
+<link name="test_robot_shaft_v4__1__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.049999999999999774 -4.787266047606709e-07 4.680090810171844e-07"/>
+    <mass value="0.03367787324648258"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="7.2e-05" iyz="0.0" izz="7.2e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.05 0.037868 -0.072528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_shaft_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.05 0.037868 -0.072528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_shaft_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="test_robot_shaft_v4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.049999999999999774 -4.78726604948021e-07 4.6800908099636773e-07"/>
+    <mass value="0.03367787324648258"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="7.2e-05" iyz="-0.0" izz="7.2e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.05 0.037868 -0.032528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_shaft_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.05 0.037868 -0.032528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_shaft_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="test_robot_wheel_v4__2__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010000000000000217 -4.787267571804144e-07 4.680090810171844e-07"/>
+    <mass value="0.028962970991975173"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="0.0" iyy="3e-06" iyz="0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.08 0.037868 -0.072528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.08 0.037868 -0.072528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="test_robot_wheel_v4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010000000000000217 -4.787267573608256e-07 4.6800908098942884e-07"/>
+    <mass value="0.028962970991975173"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="0.0" iyy="3e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.08 0.037868 -0.032528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.08 0.037868 -0.032528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="test_robot_wheel_v4__1__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.009999999999999634 -4.787267378486559e-07 4.680090080755317e-07"/>
+    <mass value="0.028962970991975173"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="0.0" iyy="3e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.08 0.037868 -0.072528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.08 0.037868 -0.072528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="test_robot_wheel_v4__3__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.009999999999999773 -4.787267565073416e-07 4.680090810171844e-07"/>
+    <mass value="0.028962970991975173"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="-0.0" iyy="3e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.08 0.037868 -0.032528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.08 0.037868 -0.032528"/>
+    <geometry>
+      <mesh filename="package://test_robot2_assem_description/meshes/test_robot_wheel_v4__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="joint_shaft_1" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.05 -0.037868 0.072528"/>
+  <parent link="base_link"/>
+  <child link="test_robot_shaft_v4__1__1"/>
+</joint>
+
+<joint name="joint_shaft_2" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.05 -0.037868 0.032528"/>
+  <parent link="base_link"/>
+  <child link="test_robot_shaft_v4_1"/>
+</joint>
+
+<joint name="joint_wheel_1" type="continuous">
+  <origin rpy="0 0 0" xyz="0.13 0.0 0.0"/>
+  <parent link="test_robot_shaft_v4__1__1"/>
+  <child link="test_robot_wheel_v4__2__1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="joint_wheel_2" type="continuous">
+  <origin rpy="0 0 0" xyz="0.13 0.0 0.0"/>
+  <parent link="test_robot_shaft_v4_1"/>
+  <child link="test_robot_wheel_v4_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="joint_wheel_3" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.03 0.0 0.0"/>
+  <parent link="test_robot_shaft_v4__1__1"/>
+  <child link="test_robot_wheel_v4__1__1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="joint_wheel_4" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.03 0.0 0.0"/>
+  <parent link="test_robot_shaft_v4_1"/>
+  <child link="test_robot_wheel_v4__3__1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so">
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+</gazebo>
+<gazebo reference="base_link">
+ <mu1 value="1"/>
+ <mu2 value="1"/>
+ <material>Gazebo/Indigo</material>
+</gazebo>
+<gazebo reference="test_robot_shaft_v4__1__1">
+ <mu1 value="1"/>
+ <mu2 value="1"/>
+ <material>Gazebo/Indigo</material>
+</gazebo>
+<gazebo reference="test_robot_shaft_v4_1">
+ <mu1 value="1"/>
+ <mu2 value="1"/>
+ <material>Gazebo/Indigo</material>
+</gazebo>
+<gazebo reference="test_robot_wheel_v4_1">
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/>
+ <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="test_robot_wheel_v4__2__1">
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/>
+ <material>Gazebo/Red</material>
+</gazebo>
+<gazebo reference="test_robot_wheel_v4__1__1">
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/>
+ <material>Gazebo/Blue</material>
+</gazebo>
+<gazebo reference="test_robot_wheel_v4__3__1">
+ <mu1 value="0.2"/>
+ <mu2 value="0.2"/>
+ <material>Gazebo/Indigo</material>
+</gazebo>
+
+<transmission name="trans1">
+ <type>transmission_interface/SimpleTransmission</type>
+ <joint name="joint_wheel_1">
+  <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+ </joint>
+ <actuator name="motor1">
+  <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  <mechanismReduction>1</mechanismReduction>
+ </actuator>
+</transmission>
+
+<transmission name="trans3">
+ <type>transmission_interface/SimpleTransmission</type>
+ <joint name="joint_wheel_3">
+  <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+ </joint>
+ <actuator name="motor3">
+  <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  <mechanismReduction>1</mechanismReduction>
+ </actuator>
+</transmission>
+
+<gazebo>
+ <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+  <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  <robotNamespace>/test_robot2_assem</robotNamespace>
+  <legacyModeNS>true</legacyModeNS>
+ </plugin>
+</gazebo>
+
+
+</robot>
